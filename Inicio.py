@@ -10,7 +10,7 @@ st.set_page_config(page_title="Demo TF-IDF", page_icon="📚", layout="wide")
 st.title("📚 Buscador TF-IDF en Español")
 st.caption("Consulta documentos y encuentra el texto más similar a tu pregunta.")
 
-# Documentos de ejemplo
+
 default_docs = """El perro ladra fuerte en el parque.
 El gato maúlla suavemente durante la noche.
 El perro y el gato juegan juntos en el jardín.
@@ -18,7 +18,7 @@ Los niños corren y se divierten en el parque.
 La música suena muy alta en la fiesta.
 Los pájaros cantan hermosas melodías al amanecer."""
 
-# Stemmer en español
+
 stemmer = SnowballStemmer("spanish")
 
 def tokenize_and_stem(text):
@@ -28,11 +28,11 @@ def tokenize_and_stem(text):
     stems = [stemmer.stem(t) for t in tokens]
     return stems
 
-# Inicializar estado
+
 if "question" not in st.session_state:
     st.session_state.question = "¿Dónde juegan el perro y el gato?"
 
-# Layout
+
 col1, col2 = st.columns([2.3, 1])
 
 with col1:
